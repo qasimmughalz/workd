@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer components {
   .input {
     @apply w-full rounded-md text-sm  px-4 outline-none shadow-sm border-gray-300 border placeholder:italic placeholder:text-gray-500;
@@ -22,4 +24,22 @@
 }
 .text-primary {
   color: #efa804;
+}
+
+
+.bg-yellow{
+  background-color: rgba(239, 168, 4, 0.1);
+}
+
+.bg-yellow::before{
+  right: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  bottom: 0;
+  content: "";
+	background-color: #EFA804
 }

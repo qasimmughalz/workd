@@ -1,6 +1,7 @@
 import { FilesForm } from '../../../components/FilesForm';
 import { Layout } from '../../../components/Layout';
 import { PageHeader } from '../../../components/PageHeader';
+import {AllFilesNewHeader} from '../../../components/AllFilesNewHeader'
 
 const EditFilePage = ({ data }) => {
   console.log(data);
@@ -23,6 +24,7 @@ const EditFilePage = ({ data }) => {
   };
   return (
     <Layout>
+      <AllFilesNewHeader/>
       <PageHeader title="Edit File" />
       <FilesForm
         initialValuesBasicInformation={initialValuesBasicInformation}

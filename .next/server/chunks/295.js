@@ -183,6 +183,18 @@ swr__WEBPACK_IMPORTED_MODULE_9__ = (__webpack_async_dependencies__.then ? (await
 //     </div>
 //   );
 // };
+const FilesFilter = ({ column  })=>{
+    const { filterVal , setFilter  } = column;
+    return(/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+        children: [
+            "Search :",
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
+                value: filterVal,
+                onChange: (e)=>setFilter(e.target.value)
+            })
+        ]
+    }));
+};
 const ActionMenu = ({ id  })=>{
     const { mutate  } = (0,swr__WEBPACK_IMPORTED_MODULE_9__.useSWRConfig)();
     const { data , error  } = (0,swr__WEBPACK_IMPORTED_MODULE_9__["default"])('/api/society', _service_SWRFetcher__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z);
@@ -235,7 +247,8 @@ const Table = ({ tableData  })=>{
         return headers.map((header)=>{
             return {
                 Header: header,
-                accessor: header
+                accessor: header,
+                Filter: FilesFilter
             };
         });
     }, [
@@ -244,8 +257,8 @@ const Table = ({ tableData  })=>{
     const tableInstance = (0,react_table__WEBPACK_IMPORTED_MODULE_4__.useTable)({
         columns,
         data
-    });
-    const { getTableProps , headerGroups , getTableBodyProps , rows , prepareRow  } = tableInstance;
+    }, react_table__WEBPACK_IMPORTED_MODULE_4__.useFilters);
+    const { getTableProps , headerGroups , getTableBodyProps , rows , prepareRow , state , setGlobalFilter  } = tableInstance;
     return(/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("table", {
             ...getTableProps(),
@@ -254,10 +267,19 @@ const Table = ({ tableData  })=>{
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("thead", {
                     children: headerGroups.map((headerGroup, index1)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("tr", {
                             ...headerGroup.getHeaderGroupProps(),
-                            children: headerGroup.headers.map((column, index)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("th", {
+                            children: headerGroup.headers.map((column, index)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("th", {
                                     className: "text-sm px-4 h-12 text-left font-semibold bg-gray-100 border-b-2 text-gray-500",
                                     ...column.getHeaderProps(),
-                                    children: column.render('Header')
+                                    children: [
+                                        column.render('Header'),
+                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                            children: [
+                                                " ",
+                                                column.canFilter ? column.render('Filter') : null,
+                                                "   "
+                                            ]
+                                        })
+                                    ]
                                 }, index)
                             )
                         }, index1)

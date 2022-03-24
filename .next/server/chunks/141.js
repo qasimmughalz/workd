@@ -23,30 +23,24 @@ const TableFilters = ({ initialValues , children  })=>{
             initialValues: initialValues,
             onSubmit: (values)=>onFormSubmit(values)
             ,
-            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(formik__WEBPACK_IMPORTED_MODULE_1__.Form, {
+            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(formik__WEBPACK_IMPORTED_MODULE_1__.Form, {
                 className: " mb-4 card border-2 shadow",
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
-                        className: "py-2 text-lg font-semibold",
-                        children: "Search Filter"
-                    }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "flex gap-y-4 gap-x-4 justify-between",
-                        children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "flex gap-x-4 gap-y-4 flex-wrap w-full",
-                                children: children
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "flex justify-end w-48 items-center",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Button__WEBPACK_IMPORTED_MODULE_2__/* .Button */ .z, {
-                                    color: "black",
-                                    children: "Filter"
-                                })
+                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                    className: "flex gap-y-4 gap-x-4 justify-between",
+                    children: [
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            className: "flex gap-x-4 gap-y-4 flex-wrap w-full",
+                            children: children
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            className: "flex justify-end w-48 items-center",
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Button__WEBPACK_IMPORTED_MODULE_2__/* .Button */ .z, {
+                                color: "black",
+                                children: "Filter"
                             })
-                        ]
-                    })
-                ]
+                        })
+                    ]
+                })
             })
         })
     }));

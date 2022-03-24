@@ -43,7 +43,7 @@ const AllFilesPage = () => {
         'FILE NO': item.fileNo,
         'FILE SECURITY': item.fileSecurityNo,
         'FILE OWNER': `Muhammad Waqas
-            Cheema`,
+         Cheema`,
         'CREATED DATE': item.createdAt,
         'ASSIGNED DATE': item.assignedDate,
         'PROJECT NAME': item.projectName,
@@ -56,7 +56,7 @@ const AllFilesPage = () => {
   return (
     <Layout>
       <AllFilesNewHeader>
-        <Button icon={<PlusIcon />} onClick={() => router.push('/files/new')}>
+        <Button icon={<PlusIcon />} onClick={() => router.push('/files/new' , {shallow:true})}>
           Add New File
         </Button>
       </AllFilesNewHeader>

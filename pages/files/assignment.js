@@ -5,6 +5,7 @@ import { Layout } from '../../components/Layout';
 import { PageHeader } from '../../components/PageHeader';
 import { Table } from '../../components/Table';
 import fetcher from '../../service/SWRFetcher';
+import {AllFilesNewHeader} from '../../components/AllFilesNewHeader'
 
 const FileAssignmentPage = () => {
   const { data, error } = useSWR(
@@ -31,6 +32,7 @@ const FileAssignmentPage = () => {
   }
   return (
     <Layout>
+      <AllFilesNewHeader/>
       <PageHeader title="File Assignment"></PageHeader>
       <div className="card mb-4">
         <FileFilters />

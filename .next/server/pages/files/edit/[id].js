@@ -19,8 +19,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FilesForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8893);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5789);
 /* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7031);
+/* harmony import */ var _components_AllFilesNewHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3304);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Layout__WEBPACK_IMPORTED_MODULE_2__]);
 _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -46,6 +48,7 @@ const EditFilePage = ({ data  })=>{
     };
     return(/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__/* .Layout */ .A, {
         children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_AllFilesNewHeader__WEBPACK_IMPORTED_MODULE_4__/* .AllFilesNewHeader */ .D, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_3__/* .PageHeader */ .m, {
                 title: "Edit File"
             }),
@@ -228,7 +231,7 @@ module.exports = import("@headlessui/react");;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [730,664,789,87,877,196,893], () => (__webpack_exec__(5824)));
+var __webpack_exports__ = __webpack_require__.X(0, [730,664,789,87,900,38,196,893], () => (__webpack_exec__(5824)));
 module.exports = __webpack_exports__;
 
 })();

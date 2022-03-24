@@ -12,7 +12,8 @@ import * as Yup from 'yup';
 export const Row = ({ title, children }) => {
   return (
     <div className="card mb-4 p-12">
-      {title && <h1 className="text-lg font-semibold mb-8">{title}</h1>}
+      {title && <h1 className="text-lg font-semibold mb-8 inline-block">{title}   <span class="  block h-0.5 bg-primary"></span></h1>}
+    
       <div className="flex items-start gap-x-8 ">{children}</div>
     </div>
   );

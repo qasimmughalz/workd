@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { useTable } from 'react-table';
+import { useTable , useFilters } from 'react-table';
 import EyeIcon from '../public/icons/eye.svg';
 import EditIcon from '../public/icons/edit.svg';
 import DeleteIcon from '../public/icons/delete.svg';
 import { useRouter } from 'next/router';
 import useSWR, { useSWRConfig } from 'swr';
 import fetcher from '../service/SWRFetcher';
+
 
 // export const Table = ({ data, withLinks }) => {
 //   const renderHeader = () => {
@@ -78,6 +79,13 @@ import fetcher from '../service/SWRFetcher';
 //   );
 // };
 
+
+
+
+
+
+
+
 const ActionMenu = ({ id }) => {
   const { mutate } = useSWRConfig();
   const { data, error } = useSWR('/api/society', fetcher);
@@ -121,6 +129,18 @@ const ActionMenu = ({ id }) => {
   );
 };
 
+
+
+const FilesFilter = ( {column})=>{
+  const { filterVal , setFilter} = column
+  return(<span>
+      Search :
+      <input value={filterVal} onChange={(e)=> setFilter(e.target.value)}></input>
+  </span>)
+
+}
+
+
 export const Table = ({ tableData }) => {
   const data = React.useMemo(() => {
     return tableData;
@@ -129,12 +149,15 @@ export const Table = ({ tableData }) => {
   const columns = React.useMemo(() => {
     let headers = Object.keys(tableData[0]);
     return headers.map((header) => {
-      return { Header: header, accessor: header };
+      return { Header: header, accessor: header, Filter: FilesFilter };
     });
   }, [tableData]);
 
-  const tableInstance = useTable({ columns, data });
-  const { getTableProps, headerGroups, getTableBodyProps, rows, prepareRow } = tableInstance;
+  const tableInstance = useTable({ columns, data } , useFilters);
+  const { getTableProps, headerGroups, getTableBodyProps, rows, prepareRow , state , setGlobalFilter} = tableInstance;
+
+
+
 
   return (
     <div>
@@ -152,6 +175,7 @@ export const Table = ({ tableData }) => {
                   {...column.getHeaderProps()}
                 >
                   {column.render('Header')}
+                  <div> {column.canFilter ? column.render('Filter') : null}   </div>
                 </th>
               ))}
             </tr>

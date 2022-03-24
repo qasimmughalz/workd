@@ -8,6 +8,8 @@ import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { FilesForm } from '../../components/FilesForm';
+import {AllFilesNewHeader} from '../../components/AllFilesNewHeader'
+
 
 const NewFilePage = () => {
   const initialValuesBasicInformation = {
@@ -29,6 +31,9 @@ const NewFilePage = () => {
   };
   return (
     <Layout>
+      <AllFilesNewHeader>
+      
+      </AllFilesNewHeader>
       <PageHeader title="Add New File"></PageHeader>
       <FilesForm
         initialValuesBasicInformation={initialValuesBasicInformation}

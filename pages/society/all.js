@@ -17,7 +17,6 @@ const SocietyFilters = ({ data }) => {
   const initialValues = {
     societyName: '',
     legalStatus: '',
-    // ownerName: '',
     area: '',
     developerCompany: '',
   };
@@ -59,6 +58,7 @@ const SocietyListingPage = () => {
 
   if (data) {
     console.log(data);
+    console.log("qasim check ", data)
     tableData = data.map((item) => {
       return {
         'SOCIETY LOGO': '/societyLogo.png',
@@ -74,6 +74,7 @@ const SocietyListingPage = () => {
     });
   }
 
+ 
   return (
     <Layout>
       <PageHeader title="Society Management">

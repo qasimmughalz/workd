@@ -38,7 +38,14 @@ const UserForm = ({ initialValues, handleSubmit }) => {
                 touched={touched.type}
               />
               <TextField
-                label="Company"
+                label="Name"
+                name="id"
+                placeholder="Name"
+                errors={errors.id}
+                touched={touched.id}
+              />
+              <TextField
+                label="S/O D/ W/O"
                 name="id"
                 placeholder=""
                 errors={errors.id}
@@ -52,7 +59,14 @@ const UserForm = ({ initialValues, handleSubmit }) => {
                 touched={touched.id}
               />
               <TextField
-                label="Phone"
+                label="Mobile Number"
+                name="id"
+                placeholder="Name"
+                errors={errors.id}
+                touched={touched.id}
+              />
+               <TextField
+                label="Address"
                 name="id"
                 placeholder=""
                 errors={errors.id}
@@ -67,12 +81,13 @@ const UserForm = ({ initialValues, handleSubmit }) => {
               />
             </Col>
             <Col>
-              <TextField
-                label="Name"
-                name="id"
-                placeholder=""
-                errors={errors.id}
-                touched={touched.id}
+            <SelectField
+                label="Applicant Category"
+                placeholder="Select Type"
+                name="type"
+                options={SOCIETY_TYPES}
+                errors={errors.type}
+                touched={touched.type}
               />
               <TextField
                 label="CNIC"
@@ -82,22 +97,55 @@ const UserForm = ({ initialValues, handleSubmit }) => {
                 touched={touched.id}
               />
               <TextField
-                label="Password"
+                label="Designation/Occupation"
+                name="id"
+                placeholder=""
+                errors={errors.id}
+                touched={touched.id}
+              />
+              <TextField
+                label="Office Number"
+                name="id"
+                placeholder="Name"
+                errors={errors.id}
+                touched={touched.id}
+              />
+            </Col>
+          </Row>
+          <Row title="Nominee Information">
+            <Col>
+              <TextField
+                label="NOminee Name"
+                name="id"
+                placeholder=""
+                errors={errors.id}
+                touched={touched.id}
+              />
+              <TextField
+                label="Nominee CNIC"
                 name="id"
                 placeholder=""
                 errors={errors.id}
                 touched={touched.id}
               />
             </Col>
-          </Row>
-          <Row>
-            <TextField
-              label="Address"
-              name="id"
-              placeholder=""
-              errors={errors.id}
-              touched={touched.id}
-            />
+            <Col>
+              <TextField
+                label="Relationship"
+                name="id"
+                placeholder=""
+                errors={errors.id}
+                touched={touched.id}
+              />
+              <TextField
+                label="Nominee Phone"
+                name="id"
+                placeholder=""
+                errors={errors.id}
+                touched={touched.id}
+              />
+            </Col>
+            
           </Row>
 
           <Row>

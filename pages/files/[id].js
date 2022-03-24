@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { Button } from '../../components/Button';
 import { Layout } from '../../components/Layout';
 import { PageHeader } from '../../components/PageHeader';
+import {AllFilesNewHeader} from '../../components/AllFilesNewHeader'
 
 export const DescriptionItem = ({ title, content }) => (
   <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 ">
@@ -24,6 +25,7 @@ const SingleFilePage = ({ data }) => {
   const router = useRouter();
   return (
     <Layout>
+      <AllFilesNewHeader/>
       <PageHeader
         title={`Muhammad Waqas
             Cheema - ${data.fileNo}`}

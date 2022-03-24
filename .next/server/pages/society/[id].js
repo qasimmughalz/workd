@@ -53,11 +53,11 @@ const PageHeader = ({ title , children  })=>{
                 className: " flex flex-col",
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
-                        className: "text-2xl font-semibold",
+                        className: "text-2xl font-semibold ",
                         children: title
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                        className: "w-full h-2 bg-primary"
+                        className: "w-full h-1 bg-primary"
                     })
                 ]
             }),
