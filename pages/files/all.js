@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { TableFilters } from '../../components/TableFilters';
 import { TextField } from '../../components/form/TextField';
 import { SelectField } from '../../components/form/TextField';
+import {AllFilesNewHeader} from '../../components/AllFilesNewHeader'
 
 const FileFilters = () => {
   return (
@@ -54,11 +55,11 @@ const AllFilesPage = () => {
   }
   return (
     <Layout>
-      <PageHeader title="File Management">
+      <AllFilesNewHeader>
         <Button icon={<PlusIcon />} onClick={() => router.push('/files/new')}>
           Add New File
         </Button>
-      </PageHeader>
+      </AllFilesNewHeader>
       <div className="card mb-4">
         <FileFilters />
       </div>

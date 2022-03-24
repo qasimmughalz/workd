@@ -17,7 +17,7 @@ const SocietyFilters = ({ data }) => {
   const initialValues = {
     societyName: '',
     legalStatus: '',
-    ownerName: '',
+    // ownerName: '',
     area: '',
     developerCompany: '',
   };
@@ -36,6 +36,7 @@ const SocietyFilters = ({ data }) => {
     { value: 'Certified', label: 'Certified' },
     { value: 'Not Certified', label: 'Not Certified' },
   ];
+
   return (
     <TableFilters initialValues={initialValues}>
       <SelectField
@@ -44,7 +45,7 @@ const SocietyFilters = ({ data }) => {
         options={getUniqueSocietyNames()}
       />
       <SelectField placeholder="Legal Status" name="legalStatus" options={LEGAL_STATUS} />
-      <SearchField placeholder="Search by owner name" name="ownerName" />
+      {/* <SearchField placeholder="Search by owner name" name="ownerName" /> */}
       <SearchField placeholder="Search by area" name="area" />
       <SearchField placeholder="Search by developer company" name="developerCompany" />
     </TableFilters>

@@ -11,9 +11,9 @@ export const TableFilters = ({ initialValues, children }) => {
             <div className="flex gap-x-4 gap-y-4 flex-wrap w-full">{children}</div>
             <div className="flex justify-end w-48 items-center">
               <Button color="black">Filter</Button>
-              <button className="underline ml-4" onClick={(e) => {}}>
+              {/* <button className="underline ml-4" onClick={(e) => {}}>
                 Reset All
-              </button>
+              </button> */}
             </div>
           </div>
         </Form>

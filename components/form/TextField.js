@@ -5,7 +5,7 @@ export const TextField = ({ label, placeholder, name, type, as, errors, touched 
   return (
     <FieldContainer label={label}>
       <Field
-        className={`input form-input  ${errors && touched ? 'border-red-500' : 'border-gray-300'}`}
+        className={`input my-3 form-input  ${errors && touched ? 'border-red-500' : 'border-gray-300'}`}
         as={as ? as : 'input'}
         type={type ? type : 'text'}
         name={name}

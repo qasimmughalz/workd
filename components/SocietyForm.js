@@ -11,9 +11,9 @@ import * as Yup from 'yup';
 
 export const Row = ({ title, children }) => {
   return (
-    <div className="card mb-4">
-      {title && <h2 className="text-lg font-semibold mb-4">{title}</h2>}
-      <div className="flex items-center gap-x-8 ">{children}</div>
+    <div className="card mb-4 p-12">
+      {title && <h1 className="text-lg font-semibold mb-8">{title}</h1>}
+      <div className="flex items-start gap-x-8 ">{children}</div>
     </div>
   );
 };
@@ -128,7 +128,78 @@ export const SocietyForm = ({ initialValues, onSubmit }) => {
       >
         {({ errors, touched }) => (
           <Form className="">
-            <Row>
+            <Row title="Society Details">
+              <Col>
+                <TextField
+                  label="Name"
+                  name="name"
+                  placeholder="Enter Name here"
+                  errors={errors.name}
+                  touched={touched.name}
+                />
+                <TextField
+                  type="tel"
+                  label="Phone No"
+                  name="phone"
+                  placeholder="Enter phone number here"
+                  errors={errors.phone}
+                  touched={touched.phone}
+                />
+              </Col>
+              <Col>
+              <TextField
+                  label="Area"
+                  name="area"
+                  placeholder="Enter area here"
+                  errors={errors.area}
+                  touched={touched.area}
+                />
+              <RadioField
+                  label="Legal Status"
+                  name="legalStatus"
+                  values={LEGAL_STATUS}
+                  errors={errors.legalStatus}
+                  touched={touched.legalStatus}
+                />
+                <TextField type="file" label="Map" name="map" placeholder="Enter website here" />
+              </Col>
+             </Row>
+
+             <Row title="Owner Detial">
+              <Col>
+              <TextField
+                  label="Owner Name"
+                  name="name"
+                  placeholder="Enter Name here"
+                  errors={errors.name}
+                  touched={touched.name}
+                />
+                {/* <SelectField
+                  label="Type"
+                  placeholder="Select Type"
+                  name="type"
+                  options={SOCIETY_TYPES}
+                  errors={errors.type}
+                  touched={touched.type}
+                /> */}
+                <TextField
+                  type="tel"
+                  label="Owner Phone No"
+                  name="ownerPhone"
+                  placeholder="Enter Phone Number here"
+                  errors={errors.ownerPhone}
+                  touched={touched.ownerPhone}
+                />
+                <TextField
+                  label="Owner Previous Project"
+                  name="ownerPrevProject"
+                  placeholder="Enter previous projects here (if any)"
+                  errors={errors.ownerPrevProject}
+                  touched={touched.ownerPrevProject}
+                />
+              </Col>
+            </Row>
+            {/* <Row>
               <Col>
                 <TextField
                   label="Society ID"
@@ -141,7 +212,7 @@ export const SocietyForm = ({ initialValues, onSubmit }) => {
                 <TextField
                   label="Name"
                   name="name"
-                  placeholder="Enter CNIC here"
+                  placeholder="Enter Name here"
                   errors={errors.name}
                   touched={touched.name}
                 />
@@ -215,7 +286,7 @@ export const SocietyForm = ({ initialValues, onSubmit }) => {
                 />
                 <TextField type="file" label="Map" name="map" placeholder="Enter website here" />
               </Col>
-            </Row>
+            </Row> */}
             <Row title="Development Company">
               <Col>
                 <TextField
@@ -252,7 +323,7 @@ export const SocietyForm = ({ initialValues, onSubmit }) => {
                     errors={errors.companyAddress}
                     touched={touched.companyAddress}
                   />
-                  <p className="underline text-blue-800 ml-36 mt-2 text-sm">Choose from map</p>
+                  {/* <p className="underline text-blue-800 ml-36 mt-2 text-sm">Choose from map</p> */}
                 </div>
               </Col>
             </Row>

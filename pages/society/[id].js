@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { PageHeader } from '../../components/PageHeader';
 import { RiEditBoxLine } from 'react-icons/ri';
 
+
 const Header = ({ id }) => {
   const router = useRouter();
   const handleEditClick = () => {
