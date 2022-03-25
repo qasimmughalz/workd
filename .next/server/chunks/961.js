@@ -228,6 +228,7 @@ const SocietyForm = ({ initialValues , onSubmit  })=>{
         }
         onSubmit();
         // hardcoded for now
+        console.log(values);
         router.push('/society/2');
     };
     return(/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -299,10 +300,10 @@ const SocietyForm = ({ initialValues , onSubmit  })=>{
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_form_TextField__WEBPACK_IMPORTED_MODULE_7__/* .TextField */ .n, {
                                             label: "Owner Name",
-                                            name: "name",
+                                            name: "ownerName",
                                             placeholder: "Enter Name here",
                                             errors: errors.name,
-                                            touched: touched.name
+                                            touched: touched.OwnerName
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_form_TextField__WEBPACK_IMPORTED_MODULE_7__/* .TextField */ .n, {
                                             type: "tel",

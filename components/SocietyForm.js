@@ -112,9 +112,11 @@ export const SocietyForm = ({ initialValues, onSubmit }) => {
     } else {
       console.log('not valid');
     }
-    onSubmit();
+    onSubmit()
     // hardcoded for now
+    console.log(values)
     router.push('/society/2');
+    
   };
 
   return (
@@ -170,10 +172,10 @@ export const SocietyForm = ({ initialValues, onSubmit }) => {
               <Col>
               <TextField
                   label="Owner Name"
-                  name="name"
+                  name="ownerName"
                   placeholder="Enter Name here"
                   errors={errors.name}
-                  touched={touched.name}
+                  touched={touched.OwnerName}
                 />
                 {/* <SelectField
                   label="Type"

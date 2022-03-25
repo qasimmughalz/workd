@@ -43,3 +43,44 @@
   content: "";
 	background-color: #EFA804
 }
+
+.custom-box{
+  height: 40vh;
+  overflow: scroll;
+}
+
+.mydflex{
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.mydflex:nth-of-type(1){
+  width: 50%;
+
+}
+.btn-yellow{
+  padding: 10px;
+}
+
+.heading{
+  margin: 20px 8px;
+}
+.heading button:first-child{
+  padding: 10px;
+  border-radius: 8px;
+  background: #EFA804;
+
+}
+
+
+.heading button:nth-child(2){
+  margin-left: 8px;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+
+}
+
+.label{
+  width: 25%;
+}

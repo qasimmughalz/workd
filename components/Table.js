@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { useTable , useFilters } from 'react-table';
+import { useTable  } from 'react-table';
 import EyeIcon from '../public/icons/eye.svg';
 import EditIcon from '../public/icons/edit.svg';
 import DeleteIcon from '../public/icons/delete.svg';
@@ -131,16 +131,6 @@ const ActionMenu = ({ id }) => {
 
 
 
-const FilesFilter = ( {column})=>{
-  const { filterVal , setFilter} = column
-  return(<span>
-      Search :
-      <input value={filterVal} onChange={(e)=> setFilter(e.target.value)}></input>
-  </span>)
-
-}
-
-
 export const Table = ({ tableData }) => {
   const data = React.useMemo(() => {
     return tableData;
@@ -149,12 +139,12 @@ export const Table = ({ tableData }) => {
   const columns = React.useMemo(() => {
     let headers = Object.keys(tableData[0]);
     return headers.map((header) => {
-      return { Header: header, accessor: header, Filter: FilesFilter };
+      return { Header: header, accessor: header};
     });
   }, [tableData]);
 
-  const tableInstance = useTable({ columns, data } , useFilters);
-  const { getTableProps, headerGroups, getTableBodyProps, rows, prepareRow , state , setGlobalFilter} = tableInstance;
+  const tableInstance = useTable({ columns, data } );
+  const { getTableProps, headerGroups, getTableBodyProps, rows, prepareRow } = tableInstance;
 
 
 
@@ -175,7 +165,7 @@ export const Table = ({ tableData }) => {
                   {...column.getHeaderProps()}
                 >
                   {column.render('Header')}
-                  <div> {column.canFilter ? column.render('Filter') : null}   </div>
+               
                 </th>
               ))}
             </tr>

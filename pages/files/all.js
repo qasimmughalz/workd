@@ -10,6 +10,7 @@ import { TableFilters } from '../../components/TableFilters';
 import { TextField } from '../../components/form/TextField';
 import { SelectField } from '../../components/form/TextField';
 import {AllFilesNewHeader} from '../../components/AllFilesNewHeader'
+import { useEffect, useState } from 'react';
 
 const FileFilters = () => {
   return (
@@ -35,24 +36,83 @@ const AllFilesPage = () => {
     'https://property-expert-backend-prod.herokuapp.com/plot-files',
     fetcher
   );
-  let tableData;
 
-  if (data) {
-    tableData = data.map((item) => {
-      return {
+
+    let tableData;
+    
+    const [security, setSecurity] = useState('')
+    const [ApiData, setAPiData] = useState(data)
+
+
+
+
+  
+    if(data){
+      tableData = data.map((item) => {
+        return {
         'FILE NO': item.fileNo,
         'FILE SECURITY': item.fileSecurityNo,
         'FILE OWNER': `Muhammad Waqas
-         Cheema`,
+        Cheema`,
         'CREATED DATE': item.createdAt,
         'ASSIGNED DATE': item.assignedDate,
         'PROJECT NAME': item.projectName,
         'PRICE (RS)': item.unitPrice,
         STATUS: 'STATUS',
         ACTION: String(item.id),
-      };
-    });
+        };
+    })
   }
+  
+  
+
+
+    function handleFilter(incoming){
+
+        if(security !== ''){
+          setSecurity(incoming)
+            const filteredData = data.filter((val)=>{
+              return val.fileSecurityNo.toLowerCase().includes(security.toLowerCase());
+            })
+            setAPiData(filteredData)
+
+            tableData = filteredData.map((item) => {
+              return {
+              'FILE NO': item.fileNo,
+              'FILE SECURITY': item.fileSecurityNo,
+              'FILE OWNER': `Muhammad Waqas
+              Cheema`,
+              'CREATED DATE': item.createdAt,
+              'ASSIGNED DATE': item.assignedDate,
+              'PROJECT NAME': item.projectName,
+              'PRICE (RS)': item.unitPrice,
+              STATUS: 'STATUS',
+              ACTION: String(item.id),
+              };
+        });
+        }
+        else{
+          setAPiData(data)
+          tableData = ApiData.map((item) => {
+            return {
+            'FILE NO': item.fileNo,
+            'FILE SECURITY': item.fileSecurityNo,
+            'FILE OWNER': `Muhammad Waqas
+            Cheema`,
+            'CREATED DATE': item.createdAt,
+            'ASSIGNED DATE': item.assignedDate,
+            'PROJECT NAME': item.projectName,
+            'PRICE (RS)': item.unitPrice,
+            STATUS: 'STATUS',
+            ACTION: String(item.id),
+            };
+        })
+        }
+  }
+
+ 
+
+
   return (
     <Layout>
       <AllFilesNewHeader>
@@ -61,7 +121,7 @@ const AllFilesPage = () => {
         </Button>
       </AllFilesNewHeader>
       <div className="card mb-4">
-        <FileFilters />
+        <input value={security} onChange={(e)=> handleFilter(e.target.value)} placeholder="Enter name" className="input my-3 form-input border-gray-300"></input>
       </div>
       <div className="card">{data && <Table tableData={tableData} />}</div>
     </Layout>
